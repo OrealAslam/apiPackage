@@ -3,6 +3,7 @@
 use Apiaccess\Verifyapitoken\VerifyApiToken;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/apiData', function (Request $request) {
-    $a = new VerifyApiToken;
-    return $a->apiData($request);
-});
+// Route::post('/apiData', function (Request $request) {
+//     $a = new VerifyApiToken;
+//     return $a->apiData($request);
+// });
+
+Route::post('/apiData',[Controller::class, 'apiData']);
